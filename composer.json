@@ -1,0 +1,27 @@
+{
+    "name": "mobilecart/hwioauthbundle",
+    "autoload": {
+        "psr-4" : {
+            "MobileCart\\HWIOAuthBundle\\" : ""
+        }
+    },
+    "type": "symfony-bundle",
+    "description": "Mobile Cart OAuth integration with HWI/OAuthBundle",
+    "keywords": ["shopping", "cart", "e-commerce", "oauth"],
+    "homepage": "http://mobilecart.io",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jesse Hanson",
+            "email": "jesse@mobilecart.io"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.24",
+        "symfony/framework-bundle": "~2.8",
+        "doctrine/common": "2.4.*",
+        "doctrine/dbal": "2.4.*",
+        "doctrine/orm": "2.4.*",
+        "hwi/oauth-bundle": "dev-master"
+    }
+}

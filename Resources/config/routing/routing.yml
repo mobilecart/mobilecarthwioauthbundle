@@ -1,0 +1,18 @@
+# comment out the default Mobile Cart login route
+
+#login:
+#    pattern: /login
+#    defaults: { _controller: MobileCartCoreBundle:Security:login }
+
+# append this to your app/config/routing.yml
+
+facebook_login:
+    path: /login/check-facebook
+
+hwi_oauth_redirect:
+    resource: "@MobileCartHWIOAuthBundle/Resources/config/routing/redirect.xml"
+    prefix:   /connect
+
+hwi_oauth_login:
+    resource: "@MobileCartHWIOAuthBundle/Resources/config/routing/login.xml"
+    prefix:   /login
