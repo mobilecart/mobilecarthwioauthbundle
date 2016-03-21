@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="cart.repo.customer_oauth">MobileCartHWIOAuthBundle:CustomerOAuth</parameter>
+    </parameters>
+
+    <services>
+        <service id="cart.entity.oauth" lazy="true" class="MobileCart\HWIOAuthBundle\Service\OAuthMysqlEntityService">
+            <call method="setDoctrine">
+                <argument type="service" id="doctrine" />
+            </call>
+            <call method="addObjectRepository">
+                <argument>customer</argument>
+                <argument>%cart.repo.customer%</argument>
+            </call>
+            <call method="addObjectRepository">
+                <argument>customer_oauth</argument>
+                <argument>%cart.repo.customer_oauth%</argument>
+            </call>
+            <call method="addObjectRepository">
+                <argument>admin_user</argument>
+                <argument>%cart.repo.admin_user%</argument>
+            </call>
+            <call method="addObjectRepository">
+                <argument>item_var_set</argument>
+                <argument>%cart.repo.item_var_set%</argument>
+            </call>
+        </service>
+    </services>
+
+</container>

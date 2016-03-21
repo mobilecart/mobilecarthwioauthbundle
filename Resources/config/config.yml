@@ -1,0 +1,13 @@
+# append this to your app/config/config.yml
+
+hwi_oauth:
+    firewall_names: [main]
+    resource_owners:
+        facebook:
+            type:                facebook
+            client_id:           your-client-id
+            client_secret:       your-client-secret
+            options:
+                csrf: false
+                display: popup #dialog is optimized for popup window
+                auth_type: rerequest # Re-asking for Declined Permissions
