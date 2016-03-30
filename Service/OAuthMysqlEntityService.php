@@ -5,12 +5,12 @@ namespace MobileCart\HWIOAuthBundle\Service;
 use Symfony\Component\Security\Core\User\UserProviderInterface;
 use MobileCart\CoreBundle\Constants\EntityConstants;
 use MobileCart\HWIOAuthBundle\Constants\EntityConstants as OAuthEntityConstants;
-use MobileCart\CoreBundle\Service\MysqlEntityService;
+use MobileCart\CoreBundle\Service\DoctrineEntityService;
 use HWI\Bundle\OAuthBundle\Security\Core\User\OAuthAwareUserProviderInterface;
 use HWI\Bundle\OAuthBundle\OAuth\Response\UserResponseInterface;
 
 class OAuthMysqlEntityService
-    extends MysqlEntityService
+    extends DoctrineEntityService
     implements UserProviderInterface, OAuthAwareUserProviderInterface
 {
 
