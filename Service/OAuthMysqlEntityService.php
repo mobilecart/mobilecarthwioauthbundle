@@ -29,6 +29,10 @@ class OAuthMysqlEntityService
 
         if ($email) {
 
+            if (!is_int(strpos($email, '@'))) {
+                $email = "{$username}@{$accountType}.com";
+            }
+
             $customer = $this->findOneBy(EntityConstants::CUSTOMER, [
                 'email' => $email,
             ]);
@@ -57,6 +61,7 @@ class OAuthMysqlEntityService
             }
         }
 
+        // return existing customer, otherwise create a new customer and return it
         if ($customer) {
             return $customer;
         }

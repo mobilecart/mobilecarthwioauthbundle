@@ -238,6 +238,8 @@ class ConnectController extends Controller
     }
 
     /**
+     * redirectToService : This is the main redirect action
+     *
      * @param Request $request
      * @param string  $service
      *
