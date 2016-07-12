@@ -45,7 +45,10 @@ class OAuthMysqlEntityService
                 ]);
 
                 if ($customerOauth) {
-                    $customer = $customerOauth->getCustomer();
+                    $customerProxy = $customerOauth->getCustomer();
+                    // Note: this is a workaround for Doctrines Cache in the UnitOfWork
+                    $customer = $this->getInstance(EntityConstants::CUSTOMER);
+                    $customer->fromArray($customerProxy->getData());
                 }
             }
 
@@ -57,7 +60,10 @@ class OAuthMysqlEntityService
             ]);
 
             if ($customerOauth) {
-                $customer = $customerOauth->getCustomer();
+                $customerProxy = $customerOauth->getCustomer();
+                // Note: this is a workaround for Doctrines Cache in the UnitOfWork
+                $customer = $this->getInstance(EntityConstants::CUSTOMER);
+                $customer->fromArray($customerProxy->getData());
             }
         }
 
