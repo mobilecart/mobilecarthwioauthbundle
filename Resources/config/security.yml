@@ -60,7 +60,11 @@ security:
                 login_path:        /login
                 use_forward:       false
                 failure_path:      /login
+                # disable previous session if you need Android/ios
+                require_previous_session: false
                 use_referer: true
+                success_handler: cart.listener.login
+                failure_handler: cart.listener.login.failed
                 oauth_user_provider:
                     service: cart.entity.oauth
 
