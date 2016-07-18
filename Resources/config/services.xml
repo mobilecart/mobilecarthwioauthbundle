@@ -6,6 +6,7 @@
 
     <parameters>
         <parameter key="cart.repo.customer_oauth">MobileCartHWIOAuthBundle:CustomerOAuth</parameter>
+        <parameter key="hwi_oauth.authentication.listener.oauth.class">MobileCart\HWIOAuthBundle\Security\Http\Firewall\OAuthListener</parameter>
     </parameters>
 
     <services>
